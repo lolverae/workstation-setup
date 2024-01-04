@@ -6,7 +6,7 @@ sudo apt upgrade -y
 
 # Install essential tools and utilities
 sudo apt install -y git python3-pip exa unzip bat gh zsh curl
-curl -sL https://deb.nodesource.com/setup_16.x | bash -
+curl -sL https://deb.nodesource.com/setup_18.x | bash -
 sudo apt install -y nodejs
 
 # Set Zsh as the default shell and install oh-my-zsh with powerlevel10k theme
