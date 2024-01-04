@@ -40,6 +40,8 @@ sudo tar -C /usr/local -xzf go1.21.5.linux-amd64.tar.gz
 sudo apt autoremove -y
 sudo apt clean
 rm ripgrep_13.0.0_amd64.deb
+rm go1.21.5.linux-amd64.tar.gz 
+rm linux-amd64.tar.gz
 
 echo "Setup completed successfully!"
 
