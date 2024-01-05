@@ -30,6 +30,7 @@ local plugins = {
         "html-lsp",
         "gopls",
         "pyright",
+        "golangci_lint_ls",
       },
     }
   },
@@ -41,6 +42,7 @@ local plugins = {
         "vim",
         "lua",
         "html",
+        "golangci_lint_ls",
         "css",
         "markdown",
         "markdown_inline",
