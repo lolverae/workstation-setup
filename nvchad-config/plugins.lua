@@ -30,7 +30,8 @@ local plugins = {
         "html-lsp",
         "gopls",
         "pyright",
-        "golangci_lint_ls",
+        "svelte-language-server",
+        "golangci-lint",
       },
     }
   },
@@ -42,7 +43,7 @@ local plugins = {
         "vim",
         "lua",
         "html",
-        "golangci_lint_ls",
+        "svelte",
         "css",
         "markdown",
         "markdown_inline",
