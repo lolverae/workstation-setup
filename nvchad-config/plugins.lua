@@ -31,7 +31,8 @@ local plugins = {
         "gopls",
         "pyright",
         "svelte-language-server",
-        "golangci-lint",
+        -- "golangci-lint",
+        -- "golangci-lint-langserver",
       },
     }
   },
@@ -47,6 +48,7 @@ local plugins = {
         "css",
         "markdown",
         "markdown_inline",
+        "go",
       },
       indent = {
         enable = true,
