@@ -31,8 +31,6 @@ local plugins = {
         "gopls",
         "pyright",
         "svelte-language-server",
-        -- "golangci-lint",
-        -- "golangci-lint-langserver",
       },
     }
   },
