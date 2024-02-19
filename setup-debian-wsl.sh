@@ -27,6 +27,9 @@ tar xzvf nvim-linux64.tar.gz
 curl -LO https://github.com/BurntSushi/ripgrep/releases/download/13.0.0/ripgrep_13.0.0_amd64.deb
 sudo dpkg -i ripgrep_13.0.0_amd64.deb
 
+#Install Pretty Ping
+curl -O /usr/local/bin/ https://raw.githubusercontent.com/denilsonsa/prettyping/master/prettyping 
+
 # Install Kubernetes related items
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
 sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
@@ -35,6 +38,9 @@ sudo brew install derailed/k9s/k9s
 # Install Golang
 wget -O go1.21.5.linux-amd64.tar.gz https://go.dev/dl/go1.21.5.linux-amd64.tar.gz
 sudo tar -C /usr/local -xzf go1.21.5.linux-amd64.tar.gz
+
+# Install other utilities
+sudo apt install ncdu
 
 # Clean up
 sudo apt autoremove -y
