@@ -42,6 +42,8 @@ sudo tar -C /usr/local -xzf go1.21.5.linux-amd64.tar.gz
 # Install other utilities
 sudo apt install ncdu
 
+sudo brew install fzf
+
 # Clean up
 sudo apt autoremove -y
 sudo apt clean
