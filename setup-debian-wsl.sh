@@ -5,13 +5,13 @@ sudo apt update
 sudo apt upgrade -y
 
 # Install essential tools and utilities
-sudo apt install -y git python3-pip exa unzip bat gh zsh curl
+sudo apt install -y git python3-pip exa unzip bat gh zsh curl wget
 curl -sL https://deb.nodesource.com/setup_18.x | bash -
 sudo apt install -y nodejs
 
 # Set Zsh as the default shell and install oh-my-zsh with powerlevel10k theme
 sudo chsh -s $(which zsh)
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -y)"
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
@@ -21,7 +21,7 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 
 # Install Neovim
 wget -O linux-amd64.tar.gz https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.tar.gz
-tar xzvf nvim-linux64.tar.gz
+tar xzvf nvim-linux64.tar.gz -C /usr/local/share/
 
 # Install RipGrep
 curl -LO https://github.com/BurntSushi/ripgrep/releases/download/13.0.0/ripgrep_13.0.0_amd64.deb
