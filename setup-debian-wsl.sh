@@ -1,4 +1,4 @@
-#!/bin/bash
+
 
 # Update the package list and upgrade installed packages
 sudo apt update
@@ -7,7 +7,7 @@ sudo apt upgrade -y
 # Install essential tools and utilities
 sudo apt install -y git python3-pip exa unzip bat gh zsh curl wget
 curl -sL https://deb.nodesource.com/setup_18.x | bash -
-sudo apt install -y nodejs
+sudo apt install -y nodejs npm
 
 # Set Zsh as the default shell and install oh-my-zsh with powerlevel10k theme
 sudo chsh -s $(which zsh)
@@ -20,7 +20,7 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 # Install Neovim
-wget -O linux-amd64.tar.gz https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.tar.gz
+wget -O nvim-linux-amd64.tar.gz https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.tar.gz
 tar xzvf nvim-linux64.tar.gz -C /usr/local/share/
 
 # Install RipGrep
@@ -33,11 +33,11 @@ curl -O /usr/local/bin/ https://raw.githubusercontent.com/denilsonsa/prettyping/
 # Install Kubernetes related items
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
 sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
-sudo brew install derailed/k9s/k9s
+sudo brew install k9s
 
 # Install Golang
-wget -O go1.21.5.linux-amd64.tar.gz https://go.dev/dl/go1.21.5.linux-amd64.tar.gz
-sudo tar -C /usr/local -xzf go1.21.5.linux-amd64.tar.gz
+wget -O go1.22.0.linux-amd64.tar.gz https://go.dev/dl/go1.22.0.linux-amd64.tar.gz
+sudo tar -C /usr/local -xzf go1.22.0.linux-amd64.tar.gz
 
 # Install other utilities
 sudo apt install ncdu
@@ -48,8 +48,8 @@ sudo brew install fzf
 sudo apt autoremove -y
 sudo apt clean
 rm ripgrep_13.0.0_amd64.deb
-rm go1.21.5.linux-amd64.tar.gz 
-rm linux-amd64.tar.gz
+rm go1.22.0.linux-amd64.tar.gz 
+rm nvim-linux-amd64.tar.gz
 
 echo "Setup completed successfully!"
 
