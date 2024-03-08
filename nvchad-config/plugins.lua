@@ -32,7 +32,8 @@ local plugins = {
         "pyright",
         "svelte-language-server",
         "terraform-ls",
-        "powershell-editor-services"
+        "powershell-editor-services",
+        "marksman",
       },
     }
   },
