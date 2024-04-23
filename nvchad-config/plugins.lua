@@ -31,9 +31,9 @@ local plugins = {
         "gopls",
         "pyright",
         "svelte-language-server",
-        "terraform-ls",
-        "powershell-editor-services",
         "marksman",
+        "terraformls",
+        "yamlls",
       },
     }
   },
