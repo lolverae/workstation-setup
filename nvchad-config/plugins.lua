@@ -32,8 +32,10 @@ local plugins = {
         "pyright",
         "svelte-language-server",
         "marksman",
-        "terraformls",
-        "yamlls",
+        "terraform-ls",
+        "eslint-lsp",
+        "yaml-language-server",
+        "prettier",
       },
     }
   },

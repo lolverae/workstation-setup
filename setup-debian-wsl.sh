@@ -39,6 +39,10 @@ sudo brew install k9s
 wget -O go1.22.0.linux-amd64.tar.gz https://go.dev/dl/go1.22.0.linux-amd64.tar.gz
 sudo tar -C /usr/local -xzf go1.22.0.linux-amd64.tar.gz
 
+# Install golang utilities
+go install -v github.com/incu6us/goimports-reviser/v3@latest
+brew install gofumpt
+
 # Install other utilities
 sudo apt install ncdu
 

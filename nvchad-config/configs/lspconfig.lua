@@ -3,7 +3,7 @@ local capabilities = require("plugins.configs.lspconfig").capabilities
 
 local lspconfig = require "lspconfig"
 
-local servers = { "html", "cssls", "gopls", "bashls", "marksman", "svelte", "eslint", "pyright", "terraformls", "yamlls" }
+local servers = { "html", "cssls", "gopls", "bashls", "marksman", "svelte", "eslint", "pyright", "terraformls" }
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
