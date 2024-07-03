@@ -37,7 +37,7 @@ local plugins = {
         "yaml-language-server",
         "prettier",
       },
-    }
+    },
   },
 
   {
@@ -57,8 +57,7 @@ local plugins = {
       indent = {
         enable = true,
       },
-
-    }
+    },
   },
 
   {
@@ -76,10 +75,27 @@ local plugins = {
           },
         },
       },
-    }
+    },
   },
 
-  -- Install a plugin
+  {
+    "epwalsh/obsidian.nvim",
+    version = "*",
+    lazy = true,
+    ft = "markdown",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+    opts = {
+      workspaces = {
+        {
+          name = "local",
+          path = "~/notes/local/",
+        },
+      },
+    },
+  },
+
   {
     "max397574/better-escape.nvim",
     event = "InsertEnter",
@@ -87,7 +103,6 @@ local plugins = {
       require("better_escape").setup()
     end,
   },
-
 }
 
 return plugins
