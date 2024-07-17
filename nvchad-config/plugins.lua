@@ -36,6 +36,8 @@ local plugins = {
         "eslint-lsp",
         "yaml-language-server",
         "prettier",
+        "typescript-language-server",
+        "eslint-lsp",
       },
     },
   },
