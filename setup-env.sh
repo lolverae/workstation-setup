@@ -37,16 +37,15 @@ install_packages
 
 # Create directories
 export XDG_CONFIG_HOME="$HOME"/.config
-mkdir -p "$XDG_CONFIG_HOME"/alacritty
-mkdir -p "$XDG_CONFIG_HOME"/alacritty/themes
-mkdir -p "$XDG_CONFIG_HOME"/k9s
-mkdir -p "$XDG_CONFIG_HOME"/wallpapers
 
-# Install zsh plugins 
-git clone https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-chsh -s $(which zsh)
+mkdir -p "$XDG_CONFIG_HOME"/{alacritty,alacritty/themes,k9s,wallpapers}
+
+# Install zsh plugins
+plugins=(ohmyzsh zsh-autosuggestions zsh-syntax-highlighting)
+for plugin in "${plugins[@]}"; do
+  git clone "https://github.com/$(echo "$plugin" | cut -d- -f1-2)/$plugin" "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/$plugin" || echo "Error installing $plugin"
+done
+
 
 # Install alacritty themes fonts and wallpapers
 git clone https://github.com/alacritty/alacritty-theme "$XDG_CONFIG_HOME"/alacritty/themes
@@ -63,5 +62,7 @@ ln -sf "$PWD/dotfiles/k9s/skin.yml" "$XDG_CONFIG_HOME"/k9s/skin.yml
 ln -sf "$PWD/dotfiles/.tmux.conf" "$HOME"/.tmux.conf
 ln -sf "$PWD/dotfiles/.zshrc" "$HOME"/.zshrc
 ln -sf "$PWD/nvim" "$XDG_CONFIG_HOME"/nvim/lua/custom/
+
+chsh -s $(which zsh)
 
 echo "All done!"
