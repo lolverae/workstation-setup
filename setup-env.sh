@@ -46,9 +46,8 @@ for plugin in "${plugins[@]}"; do
   git clone "https://github.com/$(echo "$plugin" | cut -d- -f1-2)/$plugin" "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/$plugin" || echo "Error installing $plugin"
 done
 
-
 # Install alacritty themes fonts and wallpapers
-git clone https://github.com/alacritty/alacritty-theme "$XDG_CONFIG_HOME"/alacritty/themes
+cp ./dotfiles/alacritty/themes/* "$XDG_CONFIG_HOME"/alacritty/themes
 mkdir -p $HOME/.local/share/fonts
 cp ./fonts/FiraCode* $HOME/.local/share/fonts
 cp ./wallpapers/* $XDG_CONFIG_HOME/wallpapers
@@ -57,7 +56,7 @@ cp ./wallpapers/* $XDG_CONFIG_HOME/wallpapers
 git clone https://github.com/NvChad/starter ~/.config/nvim
 
 # Symbolic links
-ln -sf "$PWD/dotfiles/alacritty.toml" "$XDG_CONFIG_HOME"/alacritty/alacritty.toml
+ln -sf "$PWD/dotfiles/alacritty/alacritty.toml" "$XDG_CONFIG_HOME"/alacritty/alacritty.toml
 ln -sf "$PWD/dotfiles/k9s/skin.yml" "$XDG_CONFIG_HOME"/k9s/skin.yml
 ln -sf "$PWD/dotfiles/.tmux.conf" "$HOME"/.tmux.conf
 ln -sf "$PWD/dotfiles/.zshrc" "$HOME"/.zshrc
