@@ -1,14 +1,8 @@
 return {
-  -- {
-  --   "stevearc/conform.nvim",
-  --   config = function()
-  --     require "configs.conform"
-  --   end,
-  -- },
   {
     "stevearc/conform.nvim",
-    event = "BufWritePre", -- uncommented
-    cmd = "ConformInfo", -- otherwise ConformInfo don't show up until first <leader>fm
+    event = "BufWritePre",
+    cmd = "ConformInfo",
     config = function()
       require "configs.conform"
     end,
@@ -23,15 +17,14 @@ return {
   },
 
   {
-  	"williamboman/mason.nvim",
-  	opts = {
-  		ensure_installed = {
+    "williamboman/mason.nvim",
+    opts = {
+      ensure_installed = {
         "lua-language-server",
         "stylua",
         "css-lsp",
         "html-lsp",
         "gopls",
-        "pyright",
         "svelte-language-server",
         "marksman",
         "terraform-ls",
@@ -40,14 +33,16 @@ return {
         "prettier",
         "typescript-language-server",
         "eslint-lsp",
-  		},
-  	},
+        "ruff-lsp",
+        "ruff",
+      },
+    },
   },
 
   {
-  	"nvim-treesitter/nvim-treesitter",
-  	opts = {
-  		ensure_installed = {
+    "nvim-treesitter/nvim-treesitter",
+    opts = {
+      ensure_installed = {
         "vim",
         "lua",
         "html",
@@ -57,8 +52,12 @@ return {
         "markdown_inline",
         "go",
         "terraform",
-  		},
-  	},
+        "javascript",
+        "bash",
+        "typescript",
+        "python",
+      },
+    },
   },
 
   {
