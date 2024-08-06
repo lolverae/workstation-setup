@@ -27,5 +27,10 @@ alias ke='kubectl explain'
 alias ks='kubectl get namespaces'
 alias kgp='kubectl get pod'
 
+# OpenTofu
+alias tfp="tofu plan"
+alias tfv="tofu validate"
+alias tfa="tofu apply"
+
 eval "$(starship init zsh)"
 
